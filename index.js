@@ -4,6 +4,7 @@ import cors from 'cors'
 import morgan from 'morgan'
 import mongoose from 'mongoose'
 import userRouter from './routes/user.js'
+import contactRouter from './routes/contact.js'
 dotenv.config()
 
 const app = express()
@@ -18,6 +19,8 @@ app.use(cors())
 
 //routing middleware
 app.use("/user", userRouter)
+app.use("/contact", contactRouter)
+
 
 const {PORT, URL} = process.env
 
